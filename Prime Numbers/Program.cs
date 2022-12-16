@@ -1,30 +1,33 @@
-﻿class App
+class App
 {
     public static void Main()
     {
-        // read parameters
-        Console.WriteLine("Enter Start Number");
-        int start = validateInteger(Console.ReadLine());
-        Console.WriteLine("Enter End Number");
-        int end = validateInteger(Console.ReadLine());
-
-        if (start == -1 || end == -1)
-        { // check on validation
-            Console.WriteLine("Invalid Parameters");
-        }
-
-        // main loop
-        for (int i = start; i < end; i++)
+        while (true)
         {
-            bool numIsPrime = numberIsPrime(i);
+            // read parameters
+            Console.WriteLine("Enter Start Number");
+            int start = validateInteger(Console.ReadLine());
+            Console.WriteLine("Enter End Number");
+            int end = validateInteger(Console.ReadLine());
 
-            if (numIsPrime)
-            {
-                Console.Write(i + " ");
+            if (start == -1 || end == -1)
+            { // check on validation
+                Console.WriteLine("Invalid Parameters");
             }
-        }
 
-        Console.WriteLine();
+            // main loop
+            for (int i = start; i < end; i++)
+            {
+                bool numIsPrime = numberIsPrime(i);
+
+                if (numIsPrime)
+                {
+                    Console.Write(i + " ");
+                }
+            }
+
+            Console.WriteLine();
+        }
     }
 
     // validate int function => returns -1 on failure
@@ -41,7 +44,7 @@
     // determines if given number is prime
     public static bool numberIsPrime(int number)
     {
-        if(number == 1)
+        if (number == 1)
         {
             return false;
         }
